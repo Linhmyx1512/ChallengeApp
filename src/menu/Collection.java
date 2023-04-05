@@ -61,10 +61,10 @@ public class Collection extends javax.swing.JPanel {
         challenges.add(new Challenge("Drink Water", new ImageIcon(getClass().getResource("/icon/challenge/Drink water.png"))));
         challenges.add(new Challenge("Eat breakfast in the morning", new ImageIcon(getClass().getResource("/icon/challenge/Eat breakfast in the morning.png"))));
         challenges.add(new Challenge("Limited social media", new ImageIcon(getClass().getResource("/icon/challenge/Limited social media.png"))));
-        challenges.add(new Challenge("Limited social media", new ImageIcon(getClass().getResource("/icon/challenge/Daily workout.png"))));
-        challenges.add(new Challenge("Limited social media", new ImageIcon(getClass().getResource("/icon/challenge/Enjoy the meal without using phone.png"))));
-        challenges.add(new Challenge("Limited social media", new ImageIcon(getClass().getResource("/icon/challenge/Smile.png"))));
-        challenges.add(new Challenge("Limited social media", new ImageIcon(getClass().getResource("/icon/challenge/Tidy up.png"))));
+        challenges.add(new Challenge("Daily workout", new ImageIcon(getClass().getResource("/icon/challenge/Daily workout.png"))));
+        challenges.add(new Challenge("Enjoy the meal without using phone", new ImageIcon(getClass().getResource("/icon/challenge/Enjoy the meal without using phone.png"))));
+        challenges.add(new Challenge("Smile", new ImageIcon(getClass().getResource("/icon/challenge/Smile.png"))));
+        challenges.add(new Challenge("Tidy up", new ImageIcon(getClass().getResource("/icon/challenge/Tidy up.png"))));
 
     }
 
