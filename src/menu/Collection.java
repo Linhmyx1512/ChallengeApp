@@ -61,10 +61,10 @@ public class Collection extends javax.swing.JPanel {
         challenges.add(new Challenge("Drink Water", new ImageIcon(getClass().getResource("/icon/challenge/Drink water.png"))));
         challenges.add(new Challenge("Eat breakfast in the morning", new ImageIcon(getClass().getResource("/icon/challenge/Eat breakfast in the morning.png"))));
         challenges.add(new Challenge("Limited social media", new ImageIcon(getClass().getResource("/icon/challenge/Limited social media.png"))));
-        challenges.add(new Challenge("Limited social media", new ImageIcon(getClass().getResource("/icon/challenge/Daily workout.png"))));
-        challenges.add(new Challenge("Limited social media", new ImageIcon(getClass().getResource("/icon/challenge/Enjoy the meal without using phone.png"))));
-        challenges.add(new Challenge("Limited social media", new ImageIcon(getClass().getResource("/icon/challenge/Smile.png"))));
-        challenges.add(new Challenge("Limited social media", new ImageIcon(getClass().getResource("/icon/challenge/Tidy up.png"))));
+        challenges.add(new Challenge("Daily workout", new ImageIcon(getClass().getResource("/icon/challenge/Daily workout.png"))));
+        challenges.add(new Challenge("Enjoy the meal without using phone", new ImageIcon(getClass().getResource("/icon/challenge/Enjoy the meal without using phone.png"))));
+        challenges.add(new Challenge("Smile", new ImageIcon(getClass().getResource("/icon/challenge/Smile.png"))));
+        challenges.add(new Challenge("Tidy up", new ImageIcon(getClass().getResource("/icon/challenge/Tidy up.png"))));
 
     }
 
@@ -96,9 +96,6 @@ public class Collection extends javax.swing.JPanel {
         imageCard.setIcon(challenges.get(result).getCard());
     }
 
-    
-   
-    
     public void resetButton() {
         isDone = false;
         isReset = false;
@@ -211,9 +208,10 @@ public class Collection extends javax.swing.JPanel {
         s.soundStart();
         if (isDraw == true) {   // trạng thái được rút            
             ++totalChallenge;
+            count = 0;
             // chuyển draw về vô hiệu hóa
             btnDraw.setBackground(new Color(204, 204, 204));
-            isDraw = false;            
+            isDraw = false;
             // => kích hoạt hiệu ứng ngẫu nhiên
             drawCard();
 
@@ -245,8 +243,10 @@ public class Collection extends javax.swing.JPanel {
     private void btnDoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoneActionPerformed
         s.soundStart();
         if (isDone == true) {
+            isReset = false;
             isDone = false;
             statusData = "Done";
+            count = 0;
             p.addDataTable(totalChallenge, nameData, dateData, statusData);
             CongratulationOn();
             timer = new Timer(1000, new ActionListener() {
@@ -270,6 +270,7 @@ public class Collection extends javax.swing.JPanel {
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
         s.soundStart();
         if (isReset == true) {
+            isDone = false;
             statusData = "Reset";
             p.addDataTable(totalChallenge, nameData, dateData, statusData);
             resetButton();
